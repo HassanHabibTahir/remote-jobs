@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MERN Remote Jobs — All Resources 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0A0F0D;
+  --surface: #111816;
+  --surface2: #182420;
+  --border: #1F2E28;
+  --border2: #2A3E36;
+  --green: #00E676;
+  --green-dim: #00C864;
+  --green-muted: #1A3D2A;
+  --green-text: #4AFF94;
+  --amber: #FFB347;
+  --amber-bg: #2A1E00;
+  --blue: #5BC8FF;
+  --blue-bg: #001E2A;
+  --pink: #FF7EB3;
+  --pink-bg: #2A0018;
+  --text: #E8F0EC;
+  --text2: #8FA89A;
+  --text3: #5A7568;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* HEADER */
+.hero {
+  padding: 56px 40px 48px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(0,230,118,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: var(--mono);
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.hero h1 span { color: var(--green); }
+.hero p { font-size: 15px; color: var(--text2); max-width: 520px; }
+.hero-stats {
+  display: flex; gap: 32px; margin-top: 32px; flex-wrap: wrap;
+}
+.stat { }
+.stat .n { font-family: var(--mono); font-size: 22px; font-weight: 600; color: var(--green); }
+.stat .l { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+/* NAV TABS */
+.nav {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  padding: 16px 40px;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0;
+  background: rgba(10,15,13,0.97);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+.nav-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  border: 1px solid var(--border2);
+  background: transparent;
+  color: var(--text3);
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.12s;
+  white-space: nowrap;
+}
+.nav-btn:hover { border-color: var(--green); color: var(--green); }
+.nav-btn.active { background: var(--green-muted); border-color: var(--green); color: var(--green); }
+
+/* MAIN LAYOUT */
+.main { max-width: 1000px; margin: 0 auto; padding: 0 40px 80px; }
+
+/* SECTIONS */
+.section { display: none; padding-top: 48px; }
+.section.active { display: block; }
+
+.sec-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.sec-title {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sec-title .dot {
+  width: 8px; height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* SITE GRID */
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.site-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px 18px;
+  border-radius: 4px;
+  transition: border-color 0.15s;
+  position: relative;
+}
+.site-card:hover { border-color: var(--border2); }
+.site-card.top { border-color: var(--green-muted); }
+.site-card.top::before {
+  content: 'TOP PICK';
+  position: absolute;
+  top: 12px; right: 12px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--green);
+  background: var(--green-muted);
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+
+.site-name {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.site-url {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--green-dim);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+}
+.site-url:hover { color: var(--green-text); text-decoration: underline; }
+.site-desc { font-size: 13px; color: var(--text2); line-height: 1.5; }
+.site-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.stag {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  border: 1px solid var(--border2);
+  color: var(--text3);
+}
+.stag.g { border-color: rgba(0,230,118,0.3); color: var(--green); background: rgba(0,230,118,0.05); }
+.stag.a { border-color: rgba(255,179,71,0.3); color: var(--amber); background: rgba(255,179,71,0.05); }
+.stag.b { border-color: rgba(91,200,255,0.3); color: var(--blue); background: rgba(91,200,255,0.05); }
+.stag.p { border-color: rgba(255,126,179,0.3); color: var(--pink); background: rgba(255,126,179,0.05); }
+
+/* INFO BOX */
+.info-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.7;
+}
+.info-box strong { color: var(--green); font-weight: 500; }
+
+.amber-box {
+  background: var(--amber-bg);
+  border: 1px solid rgba(255,179,71,0.2);
+  border-left: 3px solid var(--amber);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.7;
+}
+.amber-box strong { color: var(--amber); font-weight: 500; }
+
+/* COMMUNITY ROWS */
+.comm-list { display: grid; gap: 8px; margin-bottom: 28px; }
+.comm-row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border-radius: 3px;
+}
+.comm-icon {
+  font-family: var(--mono);
+  font-size: 18px;
+  min-width: 28px;
+  text-align: center;
+  margin-top: 1px;
+}
+.comm-name {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.comm-handle {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--green-dim);
+  text-decoration: none;
+  margin-bottom: 4px;
+  display: block;
+}
+.comm-handle:hover { color: var(--green-text); }
+.comm-desc { font-size: 12px; color: var(--text2); }
+
+/* KEYWORD BLOCKS */
+.kw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.kw-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 3px;
+}
+.kw-box h4 {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.kw-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 4px 10px;
+  margin: 3px 3px 3px 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.kw-tag:hover { border-color: var(--green); color: var(--green); }
+
+/* CODE-STYLE SEARCH BOX */
+.search-box {
+  background: #050A07;
+  border: 1px solid var(--border2);
+  padding: 20px 24px;
+  font-family: var(--mono);
+  font-size: 13px;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  position: relative;
+}
+.search-box .prompt {
+  color: var(--text3);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
+}
+.search-box .query { color: var(--green-text); line-height: 1.8; }
+.search-box .query span { color: var(--amber); }
+.search-box .query em { color: var(--blue); font-style: normal; }
+.copy-query {
+  position: absolute;
+  top: 12px; right: 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--text3);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.12s;
+}
+.copy-query:hover { border-color: var(--green); color: var(--green); }
+
+/* DAILY PLAN */
+.plan-grid { display: grid; gap: 12px; margin-bottom: 28px; }
+.plan-row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.plan-time {
+  background: var(--surface2);
+  border-right: 1px solid var(--border);
+  padding: 14px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green);
+  text-align: center;
+  line-height: 1.3;
+}
+.plan-content { padding: 14px 18px; }
+.plan-title {
+  font-weight: 500;
+  color: var(--text);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.plan-detail { font-size: 13px; color: var(--text2); line-height: 1.5; }
+.plan-detail code {
+  font-family: var(--mono);
+  font-size: 11px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--green-dim);
+  padding: 1px 6px;
+  border-radius: 2px;
+  margin: 0 2px;
+}
+
+/* COMPANY LIST */
+.co-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.co-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  border-radius: 3px;
+}
+.co-name {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.co-note { font-size: 12px; color: var(--text2); margin-bottom: 6px; }
+.co-url {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green-dim);
+  text-decoration: none;
+}
+.co-url:hover { color: var(--green-text); }
+
+/* COUNTER */
+.count-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.count-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+  text-align: center;
+  border-radius: 3px;
+}
+.count-card.active-card { border-color: var(--green); background: var(--green-muted); }
+.count-num {
+  font-family: var(--mono);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--green);
+  display: block;
+}
+.count-label { font-size: 12px; color: var(--text2); margin-top: 4px; }
+.count-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+/* FASTEST */
+.fast-list { display: grid; gap: 10px; margin-bottom: 24px; }
+.fast-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  border-radius: 3px;
+}
+.fast-rank {
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--green);
+  min-width: 28px;
+}
+.fast-title { font-weight: 500; color: var(--text); font-size: 14px; margin-bottom: 4px; }
+.fast-desc { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero { padding: 40px 20px; }
+  .nav { padding: 12px 20px; }
+  .main { padding: 0 20px 60px; }
+  .site-grid, .co-grid, .kw-grid { grid-template-columns: 1fr; }
+  .count-display { grid-template-columns: 1fr 1fr; }
+  .hero-stats { gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">// MERN Stack · Remote Jobs · 2026 Edition</div>
+  <h1>Every Place<br>to Find a <span>Remote<br>MERN Job</span>.</h1>
+  <p>Direct links only. No fluff. Apply faster, get interviews sooner.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="n">40+</div><div class="l">Job Boards</div></div>
+    <div class="stat"><div class="n">20+</div><div class="l">Communities</div></div>
+    <div class="stat"><div class="n">15+</div><div class="l">Search Tricks</div></div>
+    <div class="stat"><div class="n">30+</div><div class="l">Companies</div></div>
+  </div>
+</div>
+
+<div class="nav">
+  <button class="nav-btn active" onclick="show('boards')">Job Boards</button>
+  <button class="nav-btn" onclick="show('startups')">Startups</button>
+  <button class="nav-btn" onclick="show('freelance')">Freelance</button>
+  <button class="nav-btn" onclick="show('hidden')">Hidden Sites</button>
+  <button class="nav-btn" onclick="show('companies')">Companies</button>
+  <button class="nav-btn" onclick="show('keywords')">Keywords</button>
+  <button class="nav-btn" onclick="show('google')">Google Tricks</button>
+  <button class="nav-btn" onclick="show('communities')">Communities</button>
+  <button class="nav-btn" onclick="show('daily')">Daily Plan</button>
+  <button class="nav-btn" onclick="show('fastest')">Get Interviews Fast</button>
+</div>
+
+<div class="main">
+
+<!-- ══════════ JOB BOARDS ══════════ -->
+<div id="boards" class="section active">
+  <div class="sec-label">Section 01</div>
+  <div class="sec-title"><span class="dot"></span>Best Remote Job Boards</div>
+
+  <div class="info-box"><strong>Strategy:</strong> Check these every morning. Set up email alerts. Apply within 24 hours of a job being posted — response rates drop 80% after 3 days.</div>
+
+  <div class="site-grid">
+    <div class="site-card top">
+      <div class="site-name">We Work Remotely</div>
+      <a class="site-url" href="https://weworkremotely.com/categories/remote-programming-jobs" target="_blank">weworkremotely.com</a>
+      <div class="site-desc">Largest remote-only job board. Filter by "Programming" category. High-quality US/UK companies.</div>
+      <div class="site-tags"><span class="stag g">Remote-only</span><span class="stag g">High quality</span><span class="stag">Free</span></div>
+    </div>
+    <div class="site-card top">
+      <div class="site-name">Remote OK</div>
+      <a class="site-url" href="https://remoteok.com/remote-nodejs-jobs" target="_blank">remoteok.com/remote-nodejs-jobs</a>
+      <div class="site-desc">Pre-filtered for Node.js. Also try /remote-react-jobs and /remote-javascript-jobs. Real-time updates.</div>
+      <div class="site-tags"><span class="stag g">Pre-filtered</span><span class="stag g">Real-time</span><span class="stag">Free</span></div>
+    </div>
+    <div class="site-card top">
+      <div class="site-name">Remotive</div>
+      <a class="site-url" href="https://remotive.com/remote-jobs/software-dev" target="_blank">remotive.com/remote-jobs/software-dev</a>
+      <div class="site-desc">Curated remote tech jobs. Filter by React, Node.js, MongoDB. Strong startup presence.</div>
+      <div class="site-tags"><span class="stag g">Curated</span><span class="stag a">Startups</span><span class="stag">Free</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">LinkedIn Jobs (Remote Filter)</div>
+      <a class="site-url" href="https://www.linkedin.com/jobs/search/?keywords=MERN+Developer&f_WT=2" target="_blank">linkedin.com/jobs — f_WT=2</a>
+      <div class="site-desc">Use f_WT=2 in URL to force remote filter. Search "MERN", "Next.js", "Node.js". Set daily alerts.</div>
+      <div class="site-tags"><span class="stag b">Largest network</span><span class="stag">Alerts</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Remote.co</div>
+      <a class="site-url" href="https://remote.co/remote-jobs/developer/" target="_blank">remote.co/remote-jobs/developer</a>
+      <div class="site-desc">Curated remote developer roles. Companies listed are fully remote-first by policy.</div>
+      <div class="site-tags"><span class="stag g">Remote-first</span><span class="stag">Free</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Jobspresso</div>
+      <a class="site-url" href="https://jobspresso.co/remote-work/#s=1" target="_blank">jobspresso.co</a>
+      <div class="site-desc">Hand-curated remote jobs. Smaller volume but every listing is verified remote. Less competition.</div>
+      <div class="site-tags"><span class="stag g">Curated</span><span class="stag g">Less competition</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Himalayas</div>
+      <a class="site-url" href="https://himalayas.app/jobs/remote" target="_blank">himalayas.app/jobs/remote</a>
+      <div class="site-desc">Growing remote job board with good MERN listings. Company profiles show remote culture clearly.</div>
+      <div class="site-tags"><span class="stag g">Remote-only</span><span class="stag a">Growing</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">FlexJobs</div>
+      <a class="site-url" href="https://www.flexjobs.com/jobs/remotework" target="_blank">flexjobs.com</a>
+      <div class="site-desc">Paid ($14.95/mo) but ALL listings are scam-free and verified. Worth it for 1–2 months.</div>
+      <div class="site-tags"><span class="stag a">Paid · Verified</span><span class="stag g">No scams</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Dice</div>
+      <a class="site-url" href="https://www.dice.com/jobs?q=MERN+remote" target="_blank">dice.com</a>
+      <div class="site-desc">US-focused tech jobs. Strong for senior/contract roles. Filter by Remote and JavaScript stack.</div>
+      <div class="site-tags"><span class="stag b">US-focused</span><span class="stag">Contract</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Indeed Remote</div>
+      <a class="site-url" href="https://www.indeed.com/jobs?q=MERN+developer&l=Remote" target="_blank">indeed.com — l=Remote</a>
+      <div class="site-desc">High volume. Use advanced filters: Remote, Full-time, Date posted: Last 3 days for best results.</div>
+      <div class="site-tags"><span class="stag">High volume</span><span class="stag a">Set alerts</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Stack Overflow Jobs</div>
+      <a class="site-url" href="https://stackoverflow.com/jobs/companies?l=Remote" target="_blank">stackoverflow.com/jobs</a>
+      <div class="site-desc">Developer-first platform. Listings are technical and serious. Filter by remote and Node.js/React.</div>
+      <div class="site-tags"><span class="stag b">Dev-first</span><span class="stag">Technical</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">NodeJS.org Job Board</div>
+      <a class="site-url" href="https://jobs.nodejs.org/" target="_blank">jobs.nodejs.org</a>
+      <div class="site-desc">Official Node.js job board. Niche, but every listing is specifically looking for Node developers.</div>
+      <div class="site-tags"><span class="stag g">Niche</span><span class="stag g">Node.js specific</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ STARTUPS ══════════ -->
+<div id="startups" class="section">
+  <div class="sec-label">Section 02</div>
+  <div class="sec-title"><span class="dot"></span>Startup Hiring Platforms</div>
+
+  <div class="info-box"><strong>Why startups?</strong> Startups are 3–5x more likely to hire remote developers internationally than enterprises. Less bureaucracy, faster decisions, equity opportunities, and more interesting technical work.</div>
+
+  <div class="site-grid">
+    <div class="site-card top">
+      <div class="site-name">Wellfound (AngelList)</div>
+      <a class="site-url" href="https://wellfound.com/jobs?remote=true&role=fullstack" target="_blank">wellfound.com/jobs?remote=true</a>
+      <div class="site-desc">THE startup job board. 130K+ companies. Filter: Remote + Full-Stack + JavaScript. Apply directly in-platform, no emailing.</div>
+      <div class="site-tags"><span class="stag g">Top startup board</span><span class="stag a">Equity visible</span><span class="stag">Free</span></div>
+    </div>
+    <div class="site-card top">
+      <div class="site-name">Y Combinator Work at a Startup</div>
+      <a class="site-url" href="https://www.workatastartup.com/jobs?remote=true&role=eng" target="_blank">workatastartup.com</a>
+      <div class="site-desc">YC-backed companies only. These are well-funded, fast-moving startups. One profile, apply to many. Remote filter works well.</div>
+      <div class="site-tags"><span class="stag g">YC-backed</span><span class="stag g">High quality</span><span class="stag a">Equity</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Startup Jobs</div>
+      <a class="site-url" href="https://startup.jobs/remote-jobs" target="_blank">startup.jobs/remote-jobs</a>
+      <div class="site-desc">Dedicated startup job board. Filter by Engineering → Remote. Good mix of seed to Series B companies.</div>
+      <div class="site-tags"><span class="stag a">Startups</span><span class="stag">Free</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Product Hunt Jobs</div>
+      <a class="site-url" href="https://www.producthunt.com/jobs?remote_ok=true" target="_blank">producthunt.com/jobs</a>
+      <div class="site-desc">Jobs at companies that ship products. Filter: Remote + Engineering. Often early-stage, high impact.</div>
+      <div class="site-tags"><span class="stag p">Product-focused</span><span class="stag a">Early-stage</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Crunchbase Jobs</div>
+      <a class="site-url" href="https://www.crunchbase.com/discover/jobs" target="_blank">crunchbase.com/discover/jobs</a>
+      <div class="site-desc">Search funded startups + their open roles. Filter by funding stage (Series A/B) and technology.</div>
+      <div class="site-tags"><span class="stag b">Funded startups</span><span class="stag">Data-rich</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">EthicalJobs / Climatebase</div>
+      <a class="site-url" href="https://climatebase.org/jobs?l=Remote&q=fullstack" target="_blank">climatebase.org</a>
+      <div class="site-desc">Startups with mission focus (climate, social good). Strong remote culture. Less competition from applicants.</div>
+      <div class="site-tags"><span class="stag g">Mission-driven</span><span class="stag g">Less competition</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Indie Hackers Jobs</div>
+      <a class="site-url" href="https://www.indiehackers.com/jobs" target="_blank">indiehackers.com/jobs</a>
+      <div class="site-desc">Bootstrapped SaaS products hiring. Small teams, lots of ownership, often async-remote by default.</div>
+      <div class="site-tags"><span class="stag a">Bootstrapped</span><span class="stag g">Async remote</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Remote Rocketship</div>
+      <a class="site-url" href="https://www.remoterocketship.com/" target="_blank">remoterocketship.com</a>
+      <div class="site-desc">Aggregates startup remote jobs. Filters well by JavaScript stack. Good for finding newly posted roles fast.</div>
+      <div class="site-tags"><span class="stag a">Aggregator</span><span class="stag">Fast updates</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ FREELANCE ══════════ -->
+<div id="freelance" class="section">
+  <div class="sec-label">Section 03</div>
+  <div class="sec-title"><span class="dot"></span>Freelance Platforms for Long-Term Remote Work</div>
+
+  <div class="info-box"><strong>Strategy for long-term freelance:</strong> Target contracts over $2K/month or hourly projects at $40–$80/hr. Get 2–3 long-term clients and you effectively have a remote job with more flexibility and 20–40% higher pay.</div>
+
+  <div class="site-grid">
+    <div class="site-card top">
+      <div class="site-name">Toptal</div>
+      <a class="site-url" href="https://www.toptal.com/developers/join" target="_blank">toptal.com/developers/join</a>
+      <div class="site-desc">Top 3% vetting. Hard to get in (technical screening + live coding) but rates are $60–$150/hr. Once in, consistent work with US companies.</div>
+      <div class="site-tags"><span class="stag g">$60–$150/hr</span><span class="stag a">Hard vetting</span><span class="stag b">US clients</span></div>
+    </div>
+    <div class="site-card top">
+      <div class="site-name">Arc.dev</div>
+      <a class="site-url" href="https://arc.dev/developer/apply" target="_blank">arc.dev/developer/apply</a>
+      <div class="site-desc">Remote developer marketplace matching devs with US companies. Pre-vetted. Good MERN demand. Rates $40–$100/hr.</div>
+      <div class="site-tags"><span class="stag g">$40–$100/hr</span><span class="stag g">Vetted</span><span class="stag b">US companies</span></div>
+    </div>
+    <div class="site-card top">
+      <div class="site-name">Turing.com</div>
+      <a class="site-url" href="https://turing.com/jobs" target="_blank">turing.com/jobs</a>
+      <div class="site-desc">Match with Silicon Valley companies. Automated technical tests then placement. MERN roles are always available. $40–$80/hr.</div>
+      <div class="site-tags"><span class="stag g">Silicon Valley</span><span class="stag a">Auto-matched</span><span class="stag">$40–80/hr</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Upwork</div>
+      <a class="site-url" href="https://www.upwork.com/nx/find-work/best-matches" target="_blank">upwork.com</a>
+      <div class="site-desc">Largest freelance platform. Target long-term contracts ($2K+/mo). "Top Rated" badge unlocks better clients. Takes time to build profile.</div>
+      <div class="site-tags"><span class="stag">Largest platform</span><span class="stag a">Long-term contracts</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Contra</div>
+      <a class="site-url" href="https://contra.com/remote-jobs" target="_blank">contra.com</a>
+      <div class="site-desc">Zero commission freelance platform. Growing fast. Good for independent developers. US clients, often long-term.</div>
+      <div class="site-tags"><span class="stag g">0% commission</span><span class="stag a">Growing</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Gun.io</div>
+      <a class="site-url" href="https://gun.io/find-work/" target="_blank">gun.io</a>
+      <div class="site-desc">Freelance network for senior developers. US companies, vetted, $70–$130/hr for MERN. Smaller but serious clients.</div>
+      <div class="site-tags"><span class="stag g">Senior-focused</span><span class="stag b">$70–$130/hr</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Lemon.io</div>
+      <a class="site-url" href="https://lemon.io/for-developers/" target="_blank">lemon.io</a>
+      <div class="site-desc">European startup clients. Vetting process takes 1–2 weeks. Good rates, consistent work if accepted. Strong Node.js demand.</div>
+      <div class="site-tags"><span class="stag b">EU clients</span><span class="stag a">Startups</span><span class="stag g">Consistent work</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Fiverr Pro</div>
+      <a class="site-url" href="https://pro.fiverr.com/" target="_blank">pro.fiverr.com</a>
+      <div class="site-desc">Apply for Fiverr Pro badge — unlocks higher-paying clients ($500–$5K/project). Position as a MERN/SaaS specialist, not a generalist.</div>
+      <div class="site-tags"><span class="stag a">Pro badge</span><span class="stag">Project-based</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ HIDDEN SITES ══════════ -->
+<div id="hidden" class="section">
+  <div class="sec-label">Section 04</div>
+  <div class="sec-title"><span class="dot"></span>Hidden Websites Where Developers Actually Get Hired</div>
+
+  <div class="amber-box"><strong>These are low-competition.</strong> Most developers only know the top 5 job boards. These platforms have fewer applicants per listing — your application is 3–5x more likely to be seen.</div>
+
+  <div class="site-grid">
+    <div class="site-card top">
+      <div class="site-name">Hacker News "Who Is Hiring"</div>
+      <a class="site-url" href="https://hnhiring.com/" target="_blank">hnhiring.com</a>
+      <div class="site-desc">Monthly thread on HN where YC founders and top startups post jobs directly. No middleman. Reply directly to founders. hnhiring.com is the searchable version. Search "React" or "Node.js" + "remote".</div>
+      <div class="site-tags"><span class="stag g">Founders direct</span><span class="stag g">Low competition</span><span class="stag a">Monthly</span></div>
+    </div>
+    <div class="site-card top">
+      <div class="site-name">Hacker News "Who Wants to Be Hired"</div>
+      <a class="site-url" href="https://news.ycombinator.com/ask" target="_blank">news.ycombinator.com/ask</a>
+      <div class="site-desc">Post your own "Who wants to be hired" comment in the monthly thread. Describe your stack, timezone, and desired salary. Founders actively browse this. Format: Location | Remote | Stack | Experience | Resume link.</div>
+      <div class="site-tags"><span class="stag g">Post yourself</span><span class="stag g">Founders read this</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">GitHub Jobs Replacement — Hired.com</div>
+      <a class="site-url" href="https://hired.com/x/applied" target="_blank">hired.com</a>
+      <div class="site-desc">You post a profile, companies come to you. Reverse recruiting — get inbound offers from US/UK tech companies. Set salary expectation upfront. Strong for MERN.</div>
+      <div class="site-tags"><span class="stag g">Reverse hiring</span><span class="stag b">Inbound offers</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Underdog.io</div>
+      <a class="site-url" href="https://underdog.io/" target="_blank">underdog.io</a>
+      <div class="site-desc">Apply once, get matched to 15–20 vetted NYC/SF startups. Hidden gem — almost no one knows this exists. High response rate. US remote roles.</div>
+      <div class="site-tags"><span class="stag g">One application</span><span class="stag a">Multiple matches</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Braintrust</div>
+      <a class="site-url" href="https://app.usebraintrust.com/talent/network/" target="_blank">usebraintrust.com</a>
+      <div class="site-desc">Decentralized talent network. 0% fees to freelancers. US enterprise clients (NASA, Goldman Sachs). Strong MERN/React demand. Higher rates than Upwork.</div>
+      <div class="site-tags"><span class="stag g">0% fees</span><span class="stag b">Enterprise clients</span><span class="stag g">High rates</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Malt</div>
+      <a class="site-url" href="https://www.malt.com/" target="_blank">malt.com</a>
+      <div class="site-desc">Dominant in France/Germany/Spain. If you can work EU hours, MERN is very in-demand here. Less competition than US platforms. €50–€90/hr rates.</div>
+      <div class="site-tags"><span class="stag b">EU market</span><span class="stag g">Less competition</span><span class="stag">€50–90/hr</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">RemoteLeaf</div>
+      <a class="site-url" href="https://remoteleaf.com/" target="_blank">remoteleaf.com</a>
+      <div class="site-desc">Aggregates remote jobs from 50+ sources into one weekly newsletter. Paid ($15/mo) but saves hours of manual searching. Worth it for 2 months.</div>
+      <div class="site-tags"><span class="stag a">Newsletter aggregator</span><span class="stag">$15/mo</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Working Nomads</div>
+      <a class="site-url" href="https://www.workingnomads.com/jobs?category=development" target="_blank">workingnomads.com</a>
+      <div class="site-desc">Developer-focused remote jobs, curated daily. Good signal-to-noise ratio. Less known so fewer applicants per role.</div>
+      <div class="site-tags"><span class="stag g">Curated daily</span><span class="stag g">Low competition</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Nodesk.co</div>
+      <a class="site-url" href="https://nodesk.co/remote-jobs/" target="_blank">nodesk.co/remote-jobs</a>
+      <div class="site-desc">Remote jobs + remote companies database. The companies section is gold — browse fully remote-first companies and go direct to their careers page.</div>
+      <div class="site-tags"><span class="stag b">Company database</span><span class="stag">Go direct</span></div>
+    </div>
+    <div class="site-card">
+      <div class="site-name">Authentic Jobs</div>
+      <a class="site-url" href="https://authenticjobs.com/" target="_blank">authenticjobs.com</a>
+      <div class="site-desc">Long-running curated board for web designers and developers. Less traffic than big boards = less competition. Good US remote listings.</div>
+      <div class="site-tags"><span class="stag g">Niche</span><span class="stag g">Less competition</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ COMPANIES ══════════ -->
+<div id="companies" class="section">
+  <div class="sec-label">Section 05</div>
+  <div class="sec-title"><span class="dot"></span>Companies That Regularly Hire Remote MERN Developers</div>
+
+  <div class="info-box"><strong>Pro tip:</strong> Bookmark their careers pages. Companies re-post similar roles every few months. Applying directly (not through a job board) often goes to a smaller, more attentive inbox.</div>
+
+  <div style="margin-bottom:16px;font-family:var(--mono);font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;">Fully Remote-First Companies</div>
+  <div class="co-grid">
+    <div class="co-card"><div class="co-name">GitLab</div><div class="co-note">All-remote · 2000+ employees</div><a class="co-url" href="https://about.gitlab.com/jobs/all-jobs/" target="_blank">about.gitlab.com/jobs</a></div>
+    <div class="co-card"><div class="co-name">Automattic</div><div class="co-note">WordPress / Tumblr · 100% remote</div><a class="co-url" href="https://automattic.com/work-with-us/" target="_blank">automattic.com/work-with-us</a></div>
+    <div class="co-card"><div class="co-name">Basecamp / 37signals</div><div class="co-note">Remote-first · Async culture</div><a class="co-url" href="https://37signals.com/jobs" target="_blank">37signals.com/jobs</a></div>
+    <div class="co-card"><div class="co-name">Zapier</div><div class="co-note">Fully distributed · Node.js heavy</div><a class="co-url" href="https://zapier.com/jobs" target="_blank">zapier.com/jobs</a></div>
+    <div class="co-card"><div class="co-name">InVision</div><div class="co-note">Design tools · React/Node</div><a class="co-url" href="https://www.invisionapp.com/careers" target="_blank">invisionapp.com/careers</a></div>
+    <div class="co-card"><div class="co-name">Doist</div><div class="co-note">Todoist team · Async-first</div><a class="co-url" href="https://doist.com/jobs" target="_blank">doist.com/jobs</a></div>
+  </div>
+
+  <div style="margin-bottom:16px;font-family:var(--mono);font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;">SaaS / Product Companies (Strong MERN Demand)</div>
+  <div class="co-grid">
+    <div class="co-card"><div class="co-name">Shopify</div><div class="co-note">Remote across timezones</div><a class="co-url" href="https://www.shopify.com/careers" target="_blank">shopify.com/careers</a></div>
+    <div class="co-card"><div class="co-name">HubSpot</div><div class="co-note">Remote-friendly · Node.js/React</div><a class="co-url" href="https://www.hubspot.com/careers/jobs" target="_blank">hubspot.com/careers/jobs</a></div>
+    <div class="co-card"><div class="co-name">Notion</div><div class="co-note">React/Node · Remote roles</div><a class="co-url" href="https://www.notion.so/careers" target="_blank">notion.so/careers</a></div>
+    <div class="co-card"><div class="co-name">Vercel</div><div class="co-note">Next.js creators · Remote</div><a class="co-url" href="https://vercel.com/careers" target="_blank">vercel.com/careers</a></div>
+    <div class="co-card"><div class="co-name">MongoDB Inc.</div><div class="co-note">Remote engineering roles</div><a class="co-url" href="https://www.mongodb.com/careers" target="_blank">mongodb.com/careers</a></div>
+    <div class="co-card"><div class="co-name">Netlify</div><div class="co-note">Jamstack · Remote-first</div><a class="co-url" href="https://www.netlify.com/careers/" target="_blank">netlify.com/careers</a></div>
+    <div class="co-card"><div class="co-name">Twilio</div><div class="co-note">APIs · Node.js heavy</div><a class="co-url" href="https://www.twilio.com/en-us/company/jobs" target="_blank">twilio.com/company/jobs</a></div>
+    <div class="co-card"><div class="co-name">Auth0 / Okta</div><div class="co-note">Identity · Node/React roles</div><a class="co-url" href="https://www.okta.com/company/careers/" target="_blank">okta.com/company/careers</a></div>
+    <div class="co-card"><div class="co-name">Stripe</div><div class="co-note">Fintech · Node.js/React</div><a class="co-url" href="https://stripe.com/jobs" target="_blank">stripe.com/jobs</a></div>
+    <div class="co-card"><div class="co-name">Cloudflare</div><div class="co-note">Edge computing · Remote</div><a class="co-url" href="https://www.cloudflare.com/careers/jobs/" target="_blank">cloudflare.com/careers</a></div>
+    <div class="co-card"><div class="co-name">DigitalOcean</div><div class="co-note">Cloud · Remote-first</div><a class="co-url" href="https://www.digitalocean.com/careers" target="_blank">digitalocean.com/careers</a></div>
+    <div class="co-card"><div class="co-name">Sentry.io</div><div class="co-note">Dev tools · React/Node</div><a class="co-url" href="https://sentry.io/careers/" target="_blank">sentry.io/careers</a></div>
+  </div>
+</div>
+
+<!-- ══════════ KEYWORDS ══════════ -->
+<div id="keywords" class="section">
+  <div class="sec-label">Section 06</div>
+  <div class="sec-title"><span class="dot"></span>Best Search Keywords</div>
+
+  <div class="info-box"><strong>Mix and match:</strong> Combine keywords from different boxes. Use LinkedIn, Indeed, Remote OK, and We Work Remotely search bars. Try multiple combinations daily.</div>
+
+  <div class="kw-grid">
+    <div class="kw-box">
+      <h4>Stack Keywords</h4>
+      <span class="kw-tag">MERN Stack</span>
+      <span class="kw-tag">MERN Developer</span>
+      <span class="kw-tag">Next.js Developer</span>
+      <span class="kw-tag">React Node.js</span>
+      <span class="kw-tag">Full Stack JavaScript</span>
+      <span class="kw-tag">Node.js React</span>
+      <span class="kw-tag">TypeScript Developer</span>
+      <span class="kw-tag">JavaScript Developer</span>
+    </div>
+    <div class="kw-box">
+      <h4>Role Title Keywords</h4>
+      <span class="kw-tag">Full Stack Developer</span>
+      <span class="kw-tag">Full Stack Engineer</span>
+      <span class="kw-tag">Software Engineer</span>
+      <span class="kw-tag">Backend Developer</span>
+      <span class="kw-tag">Frontend Developer</span>
+      <span class="kw-tag">Web Developer</span>
+      <span class="kw-tag">Software Developer</span>
+      <span class="kw-tag">Application Developer</span>
+    </div>
+    <div class="kw-box">
+      <h4>Modifier Keywords</h4>
+      <span class="kw-tag">Remote</span>
+      <span class="kw-tag">Remote-first</span>
+      <span class="kw-tag">Fully remote</span>
+      <span class="kw-tag">Work from anywhere</span>
+      <span class="kw-tag">Worldwide</span>
+      <span class="kw-tag">Async</span>
+      <span class="kw-tag">Distributed team</span>
+      <span class="kw-tag">No location requirement</span>
+    </div>
+    <div class="kw-box">
+      <h4>Niche Stack Terms</h4>
+      <span class="kw-tag">MongoDB Developer</span>
+      <span class="kw-tag">Express.js</span>
+      <span class="kw-tag">React Query</span>
+      <span class="kw-tag">Next.js App Router</span>
+      <span class="kw-tag">tRPC Developer</span>
+      <span class="kw-tag">GraphQL Developer</span>
+      <span class="kw-tag">Socket.io</span>
+      <span class="kw-tag">Redux Toolkit</span>
+    </div>
+    <div class="kw-box">
+      <h4>Freelance-Specific</h4>
+      <span class="kw-tag">MERN freelance</span>
+      <span class="kw-tag">Node.js contract</span>
+      <span class="kw-tag">React contractor</span>
+      <span class="kw-tag">Full stack freelancer</span>
+      <span class="kw-tag">JavaScript consultant</span>
+      <span class="kw-tag">Long-term contract</span>
+      <span class="kw-tag">Part-time remote</span>
+      <span class="kw-tag">Hourly remote dev</span>
+    </div>
+    <div class="kw-box">
+      <h4>Company-Type Keywords</h4>
+      <span class="kw-tag">SaaS startup</span>
+      <span class="kw-tag">YC startup</span>
+      <span class="kw-tag">Series A</span>
+      <span class="kw-tag">Seed stage</span>
+      <span class="kw-tag">Fintech remote</span>
+      <span class="kw-tag">EdTech remote</span>
+      <span class="kw-tag">HealthTech remote</span>
+      <span class="kw-tag">E-commerce developer</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ GOOGLE TRICKS ══════════ -->
+<div id="google" class="section">
+  <div class="sec-label">Section 07</div>
+  <div class="sec-title"><span class="dot"></span>Google Search Tricks for Finding Remote Jobs</div>
+
+  <div class="info-box"><strong>These find jobs that never appear on job boards.</strong> Many companies post only on their own site. Google indexes them. Click "Tools → Past month" to see only recent postings.</div>
+
+  <div class="search-box">
+    <span class="prompt">// Find jobs on company career pages</span>
+    <div class="query">site:greenhouse.io <span>"MERN"</span> <em>OR</em> <span>"Node.js"</span> <em>OR</em> <span>"React"</span> "remote"</div>
+    <button class="copy-query" onclick="copySearchQuery(this)">Copy</button>
+  </div>
+  <div class="search-box">
+    <span class="prompt">// Lever is used by 10,000+ startups</span>
+    <div class="query">site:jobs.lever.co <span>"full stack"</span> <span>"React"</span> <span>"Node"</span> "remote"</div>
+    <button class="copy-query" onclick="copySearchQuery(this)">Copy</button>
+  </div>
+  <div class="search-box">
+    <span class="prompt">// Workable covers many SMBs and startups</span>
+    <div class="query">site:apply.workable.com <span>"MERN"</span> <em>OR</em> <span>"Next.js"</span> "remote"</div>
+    <button class="copy-query" onclick="copySearchQuery(this)">Copy</button>
+  </div>
+  <div class="search-box">
+    <span class="prompt">// Find direct company careers pages</span>
+    <div class="query">intitle:<span>"we're hiring"</span> <span>"MERN"</span> <em>OR</em> <span>"Node.js developer"</span> "remote" site:*.com</div>
+    <button class="copy-query" onclick="copySearchQuery(this)">Copy</button>
+  </div>
+  <div class="search-box">
+    <span class="prompt">// Remote companies + tech stack</span>
+    <div class="query"><span>"remote-first"</span> <span>"full stack developer"</span> <span>"React"</span> <span>"Node.js"</span> <em>-</em>"on-site" <em>-</em>"hybrid"</div>
+    <button class="copy-query" onclick="copySearchQuery(this)">Copy</button>
+  </div>
+  <div class="search-box">
+    <span class="prompt">// Rippling / Ashby ATS (used by modern startups)</span>
+    <div class="query">site:jobs.ashbyhq.com <span>"full stack"</span> <span>"TypeScript"</span> "remote"</div>
+    <button class="copy-query" onclick="copySearchQuery(this)">Copy</button>
+  </div>
+  <div class="search-box">
+    <span class="prompt">// Find job posts with salary ranges (bonus: easier to negotiate)</span>
+    <div class="query"><span>"$"</span> <span>"Node.js"</span> <span>"React"</span> "remote" <span>"full stack"</span> <em>after:2026-01-01</em></div>
+    <button class="copy-query" onclick="copySearchQuery(this)">Copy</button>
+  </div>
+  <div class="search-box">
+    <span class="prompt">// GitHub job threads (founders post here)</span>
+    <div class="query">site:github.com <span>"hiring"</span> <span>"MERN"</span> <em>OR</em> <span>"Node.js"</span> <span>"remote"</span> "2026"</div>
+    <button class="copy-query" onclick="copySearchQuery(this)">Copy</button>
+  </div>
+
+  <div class="amber-box" style="margin-top:24px;"><strong>⚡ Google Tip:</strong> After searching, click <strong>Tools → Any time → Past month</strong>. This filters to recent posts only — dramatically reduces noise and finds fresh listings before anyone else applies.</div>
+</div>
+
+<!-- ══════════ COMMUNITIES ══════════ -->
+<div id="communities" class="section">
+  <div class="sec-label">Section 08</div>
+  <div class="sec-title"><span class="dot"></span>Discord, Reddit & Telegram Communities</div>
+
+  <div class="info-box"><strong>Why communities?</strong> 40–50% of developer jobs are filled via referrals and word-of-mouth, not job boards. Being active in these communities builds relationships that turn into job offers.</div>
+
+  <div style="margin-bottom:16px;font-family:var(--mono);font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;">Discord Servers</div>
+  <div class="comm-list">
+    <div class="comm-row">
+      <div class="comm-icon">🎮</div>
+      <div>
+        <div class="comm-name">Reactiflux</div>
+        <a class="comm-handle" href="https://www.reactiflux.com/" target="_blank">reactiflux.com — #jobs channel</a>
+        <div class="comm-desc">Largest React community on Discord. 200K+ members. The #jobs and #freelance channels have daily postings. Direct access to senior devs and hiring managers.</div>
+      </div>
+    </div>
+    <div class="comm-row">
+      <div class="comm-icon">🎮</div>
+      <div>
+        <div class="comm-name">Nodeiflux</div>
+        <a class="comm-handle" href="https://discord.gg/vUsrbjd" target="_blank">discord.gg/vUsrbjd</a>
+        <div class="comm-desc">Node.js community Discord. Active job posting channel. Great for backend Node.js roles specifically.</div>
+      </div>
+    </div>
+    <div class="comm-row">
+      <div class="comm-icon">🎮</div>
+      <div>
+        <div class="comm-name">The Programmer's Hangout</div>
+        <a class="comm-handle" href="https://discord.gg/programming" target="_blank">discord.gg/programming</a>
+        <div class="comm-desc">100K+ general programming community. #jobs channel active daily. Good networking with other JS devs.</div>
+      </div>
+    </div>
+    <div class="comm-row">
+      <div class="comm-icon">🎮</div>
+      <div>
+        <div class="comm-name">Devcord</div>
+        <a class="comm-handle" href="https://devcord.com/" target="_blank">devcord.com</a>
+        <div class="comm-desc">Developer community with #jobs channel. Friendly environment, many remote-first companies post here.</div>
+      </div>
+    </div>
+    <div class="comm-row">
+      <div class="comm-icon">🎮</div>
+      <div>
+        <div class="comm-name">We Work Remotely Discord</div>
+        <a class="comm-handle" href="https://discord.gg/weworkremotely" target="_blank">discord.gg/weworkremotely</a>
+        <div class="comm-desc">Official WWR community. Job board discussions, company reviews, and direct recruiter conversations.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:16px;font-family:var(--mono);font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;">Reddit Communities</div>
+  <div class="comm-list">
+    <div class="comm-row">
+      <div class="comm-icon">🔴</div>
+      <div>
+        <div class="comm-name">r/remotejs</div>
+        <a class="comm-handle" href="https://reddit.com/r/remotejs" target="_blank">reddit.com/r/remotejs</a>
+        <div class="comm-desc">Remote JavaScript jobs. Weekly hiring threads. Companies and developers post here directly.</div>
+      </div>
+    </div>
+    <div class="comm-row">
+      <div class="comm-icon">🔴</div>
+      <div>
+        <div class="comm-name">r/forhire</div>
+        <a class="comm-handle" href="https://reddit.com/r/forhire" target="_blank">reddit.com/r/forhire</a>
+        <div class="comm-desc">Post [FOR HIRE] thread with your stack and rate. Clients search here. Weekly posts get real leads.</div>
+      </div>
+    </div>
+    <div class="comm-row">
+      <div class="comm-icon">🔴</div>
+      <div>
+        <div class="comm-name">r/reactjs + r/node</div>
+        <a class="comm-handle" href="https://reddit.com/r/reactjs" target="_blank">reddit.com/r/reactjs — /r/node</a>
+        <div class="comm-desc">Monthly job threads in both communities. Genuine leads from companies that want React/Node devs specifically.</div>
+      </div>
+    </div>
+    <div class="comm-row">
+      <div class="comm-icon">🔴</div>
+      <div>
+        <div class="comm-name">r/freelance + r/digitalnomad</div>
+        <a class="comm-handle" href="https://reddit.com/r/freelance" target="_blank">reddit.com/r/freelance</a>
+        <div class="comm-desc">Freelance leads, client advice, and rate discussions. r/digitalnomad often has location-independent dev job leads too.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:16px;font-family:var(--mono);font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;">Telegram Channels</div>
+  <div class="comm-list">
+    <div class="comm-row">
+      <div class="comm-icon">✈️</div>
+      <div>
+        <div class="comm-name">Remote Jobs Global</div>
+        <a class="comm-handle" href="https://t.me/remotejobsglobal" target="_blank">t.me/remotejobsglobal</a>
+        <div class="comm-desc">Daily remote dev job postings. High volume. Filter for Node.js/React keywords.</div>
+      </div>
+    </div>
+    <div class="comm-row">
+      <div class="comm-icon">✈️</div>
+      <div>
+        <div class="comm-name">JavaScript Jobs</div>
+        <a class="comm-handle" href="https://t.me/javascriptjobs" target="_blank">t.me/javascriptjobs</a>
+        <div class="comm-desc">JavaScript-specific job postings. Many remote React/Node roles posted daily.</div>
+      </div>
+    </div>
+    <div class="comm-row">
+      <div class="comm-icon">✈️</div>
+      <div>
+        <div class="comm-name">Remote Work & Jobs</div>
+        <a class="comm-handle" href="https://t.me/remoteworkjobs" target="_blank">t.me/remoteworkjobs</a>
+        <div class="comm-desc">Aggregated remote job channel. Good for general remote dev roles. Active daily.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ DAILY PLAN ══════════ -->
+<div id="daily" class="section">
+  <div class="sec-label">Section 09</div>
+  <div class="sec-title"><span class="dot"></span>Daily Application Strategy</div>
+
+  <div class="count-display">
+    <div class="count-card active-card">
+      <span class="count-num">8–12</span>
+      <div class="count-label">Applications per day</div>
+      <div class="count-sub">Quality + volume</div>
+    </div>
+    <div class="count-card">
+      <span class="count-num">5</span>
+      <div class="count-label">Job boards to check</div>
+      <div class="count-sub">Every morning</div>
+    </div>
+    <div class="count-card">
+      <span class="count-num">3</span>
+      <div class="count-label">Direct company apply</div>
+      <div class="count-sub">Skip job boards</div>
+    </div>
+    <div class="count-card">
+      <span class="count-num">24h</span>
+      <div class="count-label">Apply within this</div>
+      <div class="count-sub">Of job being posted</div>
+    </div>
+  </div>
+
+  <div class="amber-box">
+    <strong>The 8–12 Rule:</strong> Applying to 50+ jobs/day with copy-paste applications gets you 0 responses. 8–12 tailored applications to relevant roles gets you 2–4 interviews. Quality beats volume every time after the first 10.
+  </div>
+
+  <div class="plan-grid">
+    <div class="plan-row">
+      <div class="plan-time">7:00–7:30 AM</div>
+      <div class="plan-content">
+        <div class="plan-title">Check new job alerts</div>
+        <div class="plan-detail">Open email alerts from <code>WWR</code> <code>RemoteOK</code> <code>LinkedIn</code> <code>Remotive</code>. Star any posted in the last 12 hours. These are your priority applies — freshest = least competition.</div>
+      </div>
+    </div>
+    <div class="plan-row">
+      <div class="plan-time">7:30–9:30 AM</div>
+      <div class="plan-content">
+        <div class="plan-title">Apply to 5–6 jobs (Block 1)</div>
+        <div class="plan-detail">Apply to the freshest jobs first. Spend 10–15 min per application — read the JD, tailor your opening paragraph, include a relevant project link. Use <code>Wellfound</code> and <code>WWR</code> primarily.</div>
+      </div>
+    </div>
+    <div class="plan-row">
+      <div class="plan-time">9:30–10:00 AM</div>
+      <div class="plan-content">
+        <div class="plan-title">Check HN "Who is Hiring"</div>
+        <div class="plan-detail">First Monday of each month: post your <code>"Who Wants to Be Hired"</code> comment. All month: search <code>hnhiring.com</code> for MERN/React/Node. Reply directly to founder posts.</div>
+      </div>
+    </div>
+    <div class="plan-row">
+      <div class="plan-time">10:00 AM–12:00 PM</div>
+      <div class="plan-content">
+        <div class="plan-title">Apply to 3–4 jobs (Block 2) + Direct company outreach</div>
+        <div class="plan-detail">Apply via company career pages (skip the job board middleman). Check <code>YC Work at a Startup</code>. Apply to 1–2 freelance platforms (<code>Toptal</code> / <code>Arc.dev</code>).</div>
+      </div>
+    </div>
+    <div class="plan-row">
+      <div class="plan-time">12:00–1:00 PM</div>
+      <div class="plan-content">
+        <div class="plan-title">Lunch break + community check</div>
+        <div class="plan-detail">Browse <code>Reactiflux #jobs</code>, <code>r/remotejs</code>, and Telegram channels. Note any leads. Quick scan of <code>Underdog.io</code> and <code>Hired.com</code>.</div>
+      </div>
+    </div>
+    <div class="plan-row">
+      <div class="plan-time">5:00–5:30 PM</div>
+      <div class="plan-content">
+        <div class="plan-title">Follow-ups & tracking</div>
+        <div class="plan-detail">Log today's applications in a spreadsheet: company, role, date, link, status. Send any follow-ups to applications from 7 days ago. Check for recruiter messages on LinkedIn.</div>
+      </div>
+    </div>
+    <div class="plan-row">
+      <div class="plan-time">Weekly (Mon)</div>
+      <div class="plan-content">
+        <div class="plan-title">Run Google X-ray searches</div>
+        <div class="plan-detail">Run 3–4 Google operator searches (see Google Tricks tab). Use <code>Tools → Past Week</code> filter. This finds roles on company sites that never hit job boards.</div>
+      </div>
+    </div>
+    <div class="plan-row">
+      <div class="plan-time">Weekly (Fri)</div>
+      <div class="plan-content">
+        <div class="plan-title">Review & adjust</div>
+        <div class="plan-detail">How many applications sent? How many responses? Response rate under 10% = tweak your application approach. Response rate over 15% = increase daily volume.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ FASTEST ══════════ -->
+<div id="fastest" class="section">
+  <div class="sec-label">Section 10</div>
+  <div class="sec-title"><span class="dot"></span>Fastest Ways to Get Interviews</div>
+
+  <div class="info-box"><strong>Ranked by speed.</strong> These are ordered by how quickly they typically generate an interview — from days to weeks. Do all of them simultaneously, not sequentially.</div>
+
+  <div class="fast-list">
+    <div class="fast-item">
+      <div class="fast-rank">1</div>
+      <div>
+        <div class="fast-title">Apply to Hired.com / Underdog.io — reverse recruitment</div>
+        <div class="fast-desc">Post your profile and let companies come to you. Hired.com typically delivers 3–7 inbound offers within the first 2 weeks of a verified profile. This is the fastest path to interviews without applying.</div>
+      </div>
+    </div>
+    <div class="fast-item">
+      <div class="fast-rank">2</div>
+      <div>
+        <div class="fast-title">Apply to YC "Work at a Startup" — one profile, many companies</div>
+        <div class="fast-desc">One application gets you matched to 15–20 YC-backed companies. Response time is often 2–5 days. Filter for remote + JavaScript. This is the highest ROI single application you can submit.</div>
+      </div>
+    </div>
+    <div class="fast-item">
+      <div class="fast-rank">3</div>
+      <div>
+        <div class="fast-title">Apply within 2 hours of a job being posted</div>
+        <div class="fast-desc">Set alerts for every major platform. Being applicant #3 vs #300 is the difference between a response and silence. Response rates for early applicants are 5–10x higher on active job boards like WWR and Remotive.</div>
+      </div>
+    </div>
+    <div class="fast-item">
+      <div class="fast-rank">4</div>
+      <div>
+        <div class="fast-title">Post "[FOR HIRE] MERN Stack Developer" on Reddit r/forhire</div>
+        <div class="fast-desc">Takes 20 minutes. Post every Monday. Include: stack, timezone, hourly rate or salary expectation, 1 project link. Gets direct DMs from clients and startups — often same-day. Medium or high post score = more DMs.</div>
+      </div>
+    </div>
+    <div class="fast-item">
+      <div class="fast-rank">5</div>
+      <div>
+        <div class="fast-title">HN "Who is Hiring" thread — reply directly to founders</div>
+        <div class="fast-desc">Posted first Monday of every month. Founders read every reply. A short, specific response mentioning their tech stack gets faster replies than 90% of job board applications. Founders here move fast — interviews within days.</div>
+      </div>
+    </div>
+    <div class="fast-item">
+      <div class="fast-rank">6</div>
+      <div>
+        <div class="fast-title">Apply via Turing.com and Arc.dev simultaneously</div>
+        <div class="fast-desc">Both platforms have fast vetting (1–2 weeks) then ongoing job matching. Once you pass vetting, new roles come to you monthly. Getting through both at the same time doubles your matching pipeline.</div>
+      </div>
+    </div>
+    <div class="fast-item">
+      <div class="fast-rank">7</div>
+      <div>
+        <div class="fast-title">Go direct to company careers page — skip the job board</div>
+        <div class="fast-desc">Many companies post on their site 1–2 weeks before listing on job boards. Use Google X-ray searches (site:greenhouse.io "React" "remote") to find these. Your application competes with far fewer people.</div>
+      </div>
+    </div>
+    <div class="fast-item">
+      <div class="fast-rank">8</div>
+      <div>
+        <div class="fast-title">Ask for a referral from a developer at your target company</div>
+        <div class="fast-desc">Internal referrals skip the applicant queue entirely. Many companies pay $1K–$5K referral bonuses, so developers are motivated to refer. Find developers on LinkedIn, connect, be genuine. One referral = guaranteed human review.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: document.querySelector('.nav').offsetTop - 10, behavior: 'smooth' });
+}
+
+function copySearchQuery(btn) {
+  const box = btn.closest('.search-box');
+  const query = box.querySelector('.query').innerText;
+  navigator.clipboard.writeText(query.trim()).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = query.trim();
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+}
+</script>
+</body>
+</html>
